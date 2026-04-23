@@ -120,8 +120,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.88);backdrop-f
 }
 
 /* STATS */
-.stats-intro{display:grid;grid-template-columns:minmax(280px,440px) 1fr;gap:80px;align-items:end;margin-bottom:56px}
-.stats-h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(36px,4vw,52px);line-height:1.02;letter-spacing:-0.02em;margin-top:14px}
+.stats-intro{display:grid;grid-template-columns:minmax(320px,540px) 1fr;gap:60px;align-items:end;margin-bottom:56px}
+.stats-h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(28px,2.8vw,42px);line-height:1.05;letter-spacing:-0.02em;margin-top:14px}
 .stats-h2 em{font-style:italic;color:var(--muted)}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .stat-cell{background:var(--bg);padding:40px 28px}
@@ -143,7 +143,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.88);backdrop-f
 .why-kicker{font-family:'Instrument Serif',serif;font-style:italic;font-size:14px;color:#7CAFFF;letter-spacing:-0.01em}
 .why-cell h3{font-family:'Instrument Serif',serif;font-weight:400;font-size:26px;letter-spacing:-0.02em;line-height:1.1}
 .why-cell p{font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.6)}
-@media(max-width:1000px){.why-grid{grid-template-columns:1fr}.why-intro{grid-template-columns:1fr;gap:40px}}
+@media(max-width:1000px){.why-grid{grid-template-columns:repeat(2,1fr)}.why-intro{grid-template-columns:1fr;gap:40px}}
+@media(max-width:600px){.why-grid{grid-template-columns:1fr}}
 
 /* CTA */
 .cta-box{position:relative;overflow:hidden;border-radius:24px;padding:80px 64px;background:var(--bg2);border:1px solid var(--line);text-align:center}
@@ -210,11 +211,13 @@ footer{background:var(--bg2);border-top:1px solid var(--line)}
 
 /* FOUNDERS */
 .founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.founder-wrap{max-width:640px}
 .founder-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px;display:flex;gap:20px;align-items:flex-start;box-shadow:0 1px 3px rgba(0,0,0,.05)}
 .founder-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--line2)}
 .founder-name{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.01em;line-height:1.1;margin-bottom:3px}
 .founder-title{font-size:11px;font-weight:600;color:var(--muted2);letter-spacing:.07em;text-transform:uppercase;margin-bottom:13px}
 .founder-bio{font-size:14px;line-height:1.55;color:var(--muted)}
+@media(max-width:900px){.founder-wrap{max-width:100%}}
 @media(max-width:720px){.founders-grid{grid-template-columns:1fr}}
 
 /* INTEGRATION TIERS */
@@ -296,7 +299,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
 /* ── MOBILE ──────────────────────────────── */
 @media(max-width:600px){
   /* Section vertical rhythm */
-  .section-pad{padding:52px 0}
+  .section-pad{padding:44px 0}
 
   /* Hero */
   .hero-copy{padding:44px 0 20px!important}
@@ -311,30 +314,42 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
   .feat-h3{font-size:clamp(24px,7vw,36px)}
   .why-h2{font-size:clamp(28px,8vw,48px)}
   .cta-h2{font-size:clamp(30px,8.5vw,50px)}
-  .stats-h2{font-size:clamp(22px,6.5vw,34px)}
 
   /* Features: tighten */
-  .feat-copy{padding:40px 0!important}
-  .feat-visual{padding:24px 0!important;min-height:0!important}
+  .feat-copy{padding:28px 0!important}
+  .feat-visual{padding:20px 0!important;min-height:0!important}
   /* Hide floating scene cards — they overflow on narrow screens */
   .fc{display:none}
-  .scene{min-height:320px;padding:24px 12px}
+  .scene{min-height:200px;padding:16px 12px}
   .scene-glow{width:200px;height:200px}
 
   /* CTA */
   .cta-box{padding:52px 24px}
   .cta-trust{gap:14px;font-size:12px}
 
-  /* Voice cards */
-  .voice-row{margin-top:36px;padding-top:36px;gap:12px}
-  .voice-quote{font-size:14.5px}
+  /* Review + voice cards: tighten on mobile */
+  .review-card{padding:18px 20px;gap:10px}
+  .reviews-grid{margin-top:28px}
+  .voice-row{margin-top:28px;padding-top:28px;gap:10px}
+  .voice-card{padding:18px 20px 16px}
+  .voice-quote{font-size:14px}
+  .library-grid{margin-top:24px}
+
+  /* Live demo: hide phone on mobile, text list is enough */
+  .demo-visual{display:none!important}
+  .demo-frame{width:260px!important;height:472px!important;border-radius:32px!important}
 
   /* Founder card */
   .founder-card{flex-direction:column;gap:14px;padding:24px}
   .founder-photo{width:60px;height:60px}
 
-  /* Awards */
-  .award-chip{min-width:calc(50% - 5px);flex:none}
+  /* Why grid cells: tighten padding in single column */
+  .why-cell{padding:22px 18px;gap:10px}
+  .why-intro{margin-bottom:36px}
+  .awards-bar{margin-bottom:32px}
+
+  /* Awards: force 2-per-row by setting flex-basis */
+  .award-chip{flex:0 0 calc(50% - 5px);min-width:0}
 
   /* Tier cards */
   .tier-card{padding:28px 22px}
@@ -892,10 +907,10 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
           </div>
         </div>
       </div>
-      <div class="feat-visual" style="order:2;min-height:0;padding:40px 0">
+      <div class="feat-visual demo-visual" style="order:2;min-height:0;padding:32px 0">
         <div class="phone" style="transform:scale(0.92);transform-origin:center">
           <div class="phone-glow"><div class="phone-glow-circle"></div></div>
-          <div style="position:relative;width:320px;height:580px;border:5px solid var(--line);border-radius:42px;box-shadow:0 40px 80px rgba(17,17,19,.14),0 6px 20px rgba(17,17,19,.06);overflow:hidden">
+          <div class="demo-frame" style="position:relative;width:320px;height:580px;border:5px solid var(--line);border-radius:42px;box-shadow:0 40px 80px rgba(17,17,19,.14),0 6px 20px rgba(17,17,19,.06);overflow:hidden">
             <iframe src="demo-kurs.html" style="width:100%;height:100%;border:none;display:block;" title="beatvest Live Demo"></iframe>
           </div>
         </div>
@@ -1004,7 +1019,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
       </div>
       <p style="font-size:16.5px;color:var(--muted);max-width:520px">Die MiFID II-Konformität von beatvest ist kein Beiwerk. Sie ist Teil des Produktdesigns, entwickelt von jemandem, der die regulatorischen Rahmenbedingungen auf höchster institutioneller Ebene mitgestaltet hat.</p>
     </div>
-    <div style="max-width:640px">
+    <div class="founder-wrap">
       <div class="founder-card">
         <img class="founder-photo" src="photos/sophie.jpg" alt="Sophie Thurner">
         <div>
