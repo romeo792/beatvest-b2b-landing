@@ -13,6 +13,7 @@
   --line:#E7E4DC; --line2:#EFECE4; --accent:#2F80F8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:80px}
 html,body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
@@ -277,6 +278,84 @@ footer{background:var(--bg2);border-top:1px solid var(--line)}
 dialog.modal{border:none;padding:0;background:transparent;max-width:none;max-height:none}
 dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
 .modal-box{width:min(520px,calc(100vw - 32px));background:var(--bg);border-radius:20px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.3)}
+
+/* ── TABLET ──────────────────────────────── */
+@media(max-width:1000px){
+  .hero-copy{padding:64px 0 32px!important}
+  .hero-phone-wrap{padding:0 0 64px!important}
+}
+
+/* ── MOBILE NAV ──────────────────────────── */
+@media(max-width:820px){
+  .nav-links{display:none}
+  .section-pad{padding:72px 0}
+  .stats-intro{gap:28px}
+  .why-intro{gap:32px}
+}
+
+/* ── MOBILE ──────────────────────────────── */
+@media(max-width:600px){
+  /* Section vertical rhythm */
+  .section-pad{padding:52px 0}
+
+  /* Hero */
+  .hero-copy{padding:44px 0 20px!important}
+  .hero-copy h1{font-size:clamp(34px,9vw,52px)}
+  .hero-copy p{font-size:17px}
+  .hero-phone-wrap{padding:0 0 44px!important}
+  .phone-body{width:280px;height:508px}
+
+  /* Typography scale-down */
+  .stats-h2{font-size:clamp(22px,6.5vw,34px)}
+  .problem-h2{font-size:clamp(26px,7.5vw,42px)}
+  .feat-h3{font-size:clamp(24px,7vw,36px)}
+  .why-h2{font-size:clamp(28px,8vw,48px)}
+  .cta-h2{font-size:clamp(30px,8.5vw,50px)}
+  .stats-h2{font-size:clamp(22px,6.5vw,34px)}
+
+  /* Features: tighten */
+  .feat-copy{padding:40px 0!important}
+  .feat-visual{padding:24px 0!important;min-height:0!important}
+  /* Hide floating scene cards — they overflow on narrow screens */
+  .fc{display:none}
+  .scene{min-height:320px;padding:24px 12px}
+  .scene-glow{width:200px;height:200px}
+
+  /* CTA */
+  .cta-box{padding:52px 24px}
+  .cta-trust{gap:14px;font-size:12px}
+
+  /* Voice cards */
+  .voice-row{margin-top:36px;padding-top:36px;gap:12px}
+  .voice-quote{font-size:14.5px}
+
+  /* Founder card */
+  .founder-card{flex-direction:column;gap:14px;padding:24px}
+  .founder-photo{width:60px;height:60px}
+
+  /* Awards */
+  .award-chip{min-width:calc(50% - 5px);flex:none}
+
+  /* Tier cards */
+  .tier-card{padding:28px 22px}
+  .tier-h3{font-size:24px}
+
+  /* vs-bar */
+  .vs-bar{flex-direction:column;gap:8px}
+
+  /* Topic pills wrap nicely */
+  .topic-pill{font-size:12.5px;padding:8px 14px}
+
+  /* Stats grid already 1-col at 600px */
+  .stat-cell{padding:28px 20px}
+  .stat-num{font-size:52px}
+
+  /* Press label */
+  .press-label-col{display:none}
+
+  /* Nav CTA smaller on mobile */
+  nav .btn-primary{height:38px;padding:0 14px;font-size:13px}
+}
 .modal-head{padding:26px 28px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
 .modal-head h3{font-family:'Instrument Serif',serif;font-weight:400;font-size:24px;letter-spacing:-0.02em;margin-top:6px}
 .modal-close{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--muted);display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer}
