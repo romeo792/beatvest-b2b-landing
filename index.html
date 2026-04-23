@@ -37,9 +37,7 @@ p{line-height:1.55}
 nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.88);backdrop-filter:saturate(1.2)blur(10px);border-bottom:1px solid var(--line2)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
 .nav-logo{display:flex;align-items:center;gap:10px}
-.nav-mark{width:28px;height:28px;border-radius:8px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
-.nav-wordmark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.015em}
-.nav-wordmark em{font-style:italic;color:var(--muted2)}
+.nav-logo-img{height:30px;width:auto;display:block}
 .nav-links{display:flex;gap:32px;font-size:14px;color:var(--muted);font-weight:500}
 .nav-links a:hover{color:var(--ink)}
 
@@ -162,8 +160,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.88);backdrop-f
 footer{background:var(--bg2);border-top:1px solid var(--line)}
 .footer-grid{display:grid;grid-template-columns:1fr auto;gap:80px;padding:72px 0 0;align-items:start}
 .footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.footer-mark{width:32px;height:32px;border-radius:9px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
-.footer-wordmark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.015em}
+.footer-logo-img{height:28px;width:auto;display:block}
 .footer-desc{font-size:14px;line-height:1.55;color:var(--muted);max-width:340px}
 .footer-cities{margin-top:20px;font-size:12px;color:var(--muted2);letter-spacing:.06em}
 .footer-col-title{margin-bottom:14px}
@@ -189,7 +186,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line)}
 .library-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
 .topic-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13.5px;font-weight:500;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.05);transition:box-shadow .15s,transform .15s}
 .topic-pill:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-1px)}
-.topic-icon{font-size:16px;line-height:1}
+.topic-icon{width:15px;height:15px;flex-shrink:0;stroke:var(--muted);display:block}
 
 /* REVIEW CARDS */
 .reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px}
@@ -303,13 +300,32 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
 </style>
 </head>
 <body>
+<svg style="display:none" aria-hidden="true">
+  <symbol id="ico-trend" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+  <symbol id="ico-bar" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></symbol>
+  <symbol id="ico-percent" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+  <symbol id="ico-briefcase" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></symbol>
+  <symbol id="ico-umbrella" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 12a11.05 11.05 0 00-22 0zm-5 7a3 3 0 01-6 0v-7"/></symbol>
+  <symbol id="ico-hash" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></symbol>
+  <symbol id="ico-pie" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></symbol>
+  <symbol id="ico-home" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="ico-leaf" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 19.5A7.5 7.5 0 0015.5 21C19 21 21 19 21 16c0-1.2-.63-4.5-4-8z"/><path d="M3.82 19.5c4.5-7.5 10-11 17-8"/></symbol>
+  <symbol id="ico-users" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></symbol>
+  <symbol id="ico-shield" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="ico-doc" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+  <symbol id="ico-calc" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="8" y2="14"/><line x1="16" y1="18" x2="8" y2="18"/><line x1="8" y1="10" x2="8" y2="10" stroke-width="3"/><line x1="12" y1="10" x2="12" y2="10" stroke-width="3"/><line x1="16" y1="10" x2="16" y2="10" stroke-width="3"/></symbol>
+  <symbol id="ico-brain" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-1.07-4.53A3 3 0 0 1 4.16 9.65 2.5 2.5 0 0 1 4.5 5a3 3 0 0 1 5-2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 1.07-4.53A3 3 0 0 0 19.84 9.65 2.5 2.5 0 0 0 19.5 5a3 3 0 0 0-5-2Z"/></symbol>
+  <symbol id="ico-heart" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></symbol>
+  <symbol id="ico-star" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="ico-gem" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 3 2 9 12 22 22 9 18 3"/><line x1="2" y1="9" x2="22" y2="9"/><polyline points="6 3 12 9 18 3"/></symbol>
+  <symbol id="ico-laptop" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/></symbol>
+</svg>
 
 <!-- NAV -->
 <nav>
   <div class="wrap nav-inner">
     <div class="nav-logo">
-      <div class="nav-mark">b</div>
-      <span class="nav-wordmark">beatvest<em> · b2b</em></span>
+      <img class="nav-logo-img" src="beatvest-logo.png" alt="beatvest">
     </div>
     <div class="nav-links">
       <a href="#problem">Der Hebel</a>
@@ -433,7 +449,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
       </div>
       <div>
         <div class="bullet-row"><span class="bullet-num">01</span><span class="bullet-text">Rund ein Drittel aller Depots in Deutschland ist dauerhaft inaktiv, aus Unwissen, nicht aus Desinteresse. <span style="font-size:13px;color:var(--muted2)">(Cofinpro / DAI 2025)</span></span></div>
-        <div class="bullet-row"><span class="bullet-num">02</span><span class="bullet-text">Die meisten Nutzer verharren bei Produkten mit niedriger Marge, weil ihnen der Kontext fehlt, um mehr zu tun.</span></div>
+        <div class="bullet-row"><span class="bullet-num">02</span><span class="bullet-text">Die meisten Nutzer:innen verharren bei Produkten mit niedriger Marge, weil ihnen der Kontext fehlt, um mehr zu tun.</span></div>
         <div class="bullet-row"><span class="bullet-num">03</span><span class="bullet-text">80 % der jungen Erwachsenen haben in der Schule kaum etwas über Finanzen gelernt. <span style="font-size:13px;color:var(--muted2)">(Bankenverband Jugendstudie 2024)</span></span></div>
         <div class="bullet-row"><span class="bullet-num">04</span><span class="bullet-text">Bildung schafft Vertrauen. Vertrauen ist die Grundlage jeder Produktentscheidung.</span></div>
       </div>
@@ -465,7 +481,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
         <div class="feat-copy" style="order:1">
           <div class="feat-divider"><span class="feat-num">01 · Conversion</span><span class="feat-line"></span></div>
           <h3 class="feat-h3">Steigern Sie Ihren Umsatz mit Inhalten, die konsequent auf <em>Conversion</em> ausgerichtet sind.</h3>
-          <p class="feat-body">Unsere Kurse sind auf Conversion ausgerichtet: jeder Schritt führt Nutzer von der Bildung zur Aktion, verknüpft Lernen mit Produktkauf und treibt echten Cross Sell.</p>
+          <p class="feat-body">Unsere Kurse sind „conversion-first" konzipiert: jeder Schritt führt Nutzer:innen nahtlos vom Lernen zur Handlung und verknüpft Bildung direkt mit dem Produktabschluss, um messbare Conversion zu erzielen.</p>
         </div>
         <div class="feat-visual" style="order:2">
           <div class="scene">
@@ -551,8 +567,8 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
         </div>
         <div class="feat-copy" style="order:2">
           <div class="feat-divider"><span class="feat-num">02 · Personalisierung</span><span class="feat-line"></span></div>
-          <h3 class="feat-h3">Steigern Sie das Nutzer Engagement mit <em>personalisierten</em> Lernreisen.</h3>
-          <p class="feat-body">Ob junge Eltern, Selbstständige oder Paare, die ihre Zukunft planen: 300+ modulare Videos, Texte und Quizze passen sich Bedürfnissen und Zielen an.</p>
+          <h3 class="feat-h3">Steigern Sie das Nutzer:innen-Engagement mit <em>personalisierten</em> Lernreisen.</h3>
+          <p class="feat-body">Ob Finanzen für junge Eltern, Selbstständige oder Paare, die ihre Zukunft planen: Über 300 modulare Videos, Texte und Quizformate passen sich der jeweiligen Lebensphase und den Bedürfnissen Ihrer Nutzer:innen an. So werden passive Kund:innen zu selbstbewussten, engagierten Produktnutzer:innen.</p>
         </div>
       </div>
     </div>
@@ -565,7 +581,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
         <div class="feat-copy" style="order:1">
           <div class="feat-divider"><span class="feat-num">03 · Engagement</span><span class="feat-line"></span></div>
           <h3 class="feat-h3">Schaffen Sie tägliche Produktinteraktion und fördern Sie Loyalität durch <em>Gamification</em>.</h3>
-          <p class="feat-body">Gamifizierte Streaks, Punkte, Belohnungen und Challenges schaffen kontinuierliches Engagement und halten Ihre App dauerhaft im Gedächtnis Ihrer Kunden.</p>
+          <p class="feat-body">Gamifizierte Elemente wie Streaks, Punkte, Belohnungen und Challenges sorgen für kontinuierliches Engagement, halten Ihre App präsent und steigern nachhaltig die Kundenbindung.</p>
         </div>
         <div class="feat-visual" style="order:2">
           <div class="scene">
@@ -628,8 +644,8 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
                   <div style="width:22px;height:22px;border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#111">b</div>
                   <span style="font-size:12px;font-weight:600">beatvest · Journal</span>
                 </div>
-                <div style="font-family:'Instrument Serif',Georgia,serif;font-size:22px;letter-spacing:-0.01em;line-height:1.1;margin-bottom:6px">Du bist on fire! 🔥</div>
-                <div style="font-size:12px;opacity:.7">10 Tage in Folge. Das ist beeindruckend.</div>
+                <div style="font-family:'Instrument Serif',Georgia,serif;font-size:22px;letter-spacing:-0.01em;line-height:1.1;margin-bottom:6px">Ihr Lern-Streak: 10 Tage.</div>
+                <div style="font-size:12px;opacity:.7">Ihr Bonus wartet auf Sie.</div>
               </div>
               <!-- Email body -->
               <div style="padding:16px 20px 20px">
@@ -663,7 +679,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
         <div class="feat-copy" style="order:2">
           <div class="feat-divider"><span class="feat-num">04 · Aktivierung</span><span class="feat-line"></span></div>
           <h3 class="feat-h3">Automatisieren Sie Aktivierung mit <em>intelligenten</em> CRM Journeys.</h3>
-          <p class="feat-body">Lösen Sie Produktnudges, Bildungsmodule und Reaktivierungsflows per Email, Push und in der App aus, ausgerichtet auf Ihre KPIs. Schluss mit reinen Verkaufsnachrichten.</p>
+          <p class="feat-body">Transformieren Sie Ihr CRM mit Content-Led Activation. Lösen Sie gezielte Produkt-Impulse, Lernmodule und Re-Engagement-Flows per E-Mail, Push-Benachrichtigung und In-App-Messaging aus. Gehen Sie über reine Kaufnachrichten hinaus und setzen Sie auf eine Content-First-Strategie, die aufklärt, aktiviert und konvertiert.</p>
         </div>
       </div>
     </div>
@@ -740,30 +756,30 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
     <div class="stats-intro" style="margin-bottom:0">
       <div>
         <div class="eyebrow">300+ Module · 19 Themengebiete</div>
-        <h2 class="stats-h2">Inhalte, die Ihre Kunden <em>wirklich beschäftigen.</em></h2>
+        <h2 class="stats-h2">Inhalte, die Ihre Kund:innen <em>wirklich beschäftigen.</em></h2>
       </div>
       <p style="font-size:16.5px;color:var(--muted);max-width:520px">Von ETF-Grundlagen bis Altersvorsorge, von Krypto bis Immobilien. Inhalte für jeden Wissensstand, jede Lebensphase und jedes Ihrer Produkte. Wöchentlich neu.</p>
     </div>
     <div class="library-grid">
-      <div class="topic-pill"><span class="topic-icon">🔥</span>Inflation &amp; Kaufkraft</div>
-      <div class="topic-pill"><span class="topic-icon">📈</span>Zinseszins</div>
-      <div class="topic-pill"><span class="topic-icon">📊</span>ETF Grundlagen</div>
-      <div class="topic-pill"><span class="topic-icon">💹</span>Aktien verstehen</div>
-      <div class="topic-pill"><span class="topic-icon">🏛</span>Depot eröffnen</div>
-      <div class="topic-pill"><span class="topic-icon">🏖</span>Altersvorsorge 2027</div>
-      <div class="topic-pill"><span class="topic-icon">₿</span>Krypto Basics</div>
-      <div class="topic-pill"><span class="topic-icon">⚖️</span>Portfolio aufbauen</div>
-      <div class="topic-pill"><span class="topic-icon">🏠</span>Immobilien investieren</div>
-      <div class="topic-pill"><span class="topic-icon">🌱</span>Nachhaltig investieren</div>
-      <div class="topic-pill"><span class="topic-icon">💑</span>Finanzen als Paar</div>
-      <div class="topic-pill"><span class="topic-icon">💼</span>Finanzen für Selbstständige</div>
-      <div class="topic-pill"><span class="topic-icon">🥇</span>Gold &amp; Rohstoffe</div>
-      <div class="topic-pill"><span class="topic-icon">🛡</span>Versicherungen</div>
-      <div class="topic-pill"><span class="topic-icon">📜</span>Staatsanleihen</div>
-      <div class="topic-pill"><span class="topic-icon">🧾</span>Steuern &amp; Investieren</div>
-      <div class="topic-pill"><span class="topic-icon">🧠</span>Psychologie des Geldes</div>
-      <div class="topic-pill"><span class="topic-icon">👶</span>Finanzen für Eltern</div>
-      <div class="topic-pill"><span class="topic-icon">👩</span>Finanzen für Frauen</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-trend"/></svg>Inflation &amp; Kaufkraft</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-percent"/></svg>Zinseszins</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-bar"/></svg>ETF Grundlagen</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-trend"/></svg>Aktien verstehen</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-briefcase"/></svg>Depot eröffnen</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-umbrella"/></svg>Altersvorsorge 2027</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-hash"/></svg>Krypto Basics</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-pie"/></svg>Portfolio aufbauen</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-home"/></svg>Immobilien investieren</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-leaf"/></svg>Nachhaltig investieren</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-users"/></svg>Finanzen als Paar</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-laptop"/></svg>Finanzen für Selbstständige</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-gem"/></svg>Gold &amp; Rohstoffe</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-shield"/></svg>Versicherungen</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-doc"/></svg>Staatsanleihen</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-calc"/></svg>Steuern &amp; Investieren</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-brain"/></svg>Psychologie des Geldes</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-heart"/></svg>Finanzen für Eltern</div>
+      <div class="topic-pill"><svg class="topic-icon" width="15" height="15"><use href="#ico-star"/></svg>Finanzen für Frauen</div>
     </div>
   </div>
 </section>
@@ -775,7 +791,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
       <div class="feat-copy" style="order:1">
         <div class="feat-divider"><span class="feat-num">Live Demo</span><span class="feat-line"></span></div>
         <h3 class="feat-h3">Erleben Sie das Produkt <em>von innen.</em></h3>
-        <p class="feat-body">So lernen Ihre Kunden: Mikro-Lektionen, ein KI-Lernbegleiter, interaktive Quizze und ein Zinseszins-Rechner. Alles in unter 3 Minuten. Vollständig in Ihrem Branding.</p>
+        <p class="feat-body">So lernen Ihre Kund:innen: Mikro-Lektionen, ein KI-Lernbegleiter, interaktive Quizze und ein Zinseszins-Rechner. Alles in unter 3 Minuten. Vollständig in Ihrem Branding.</p>
         <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
           <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)">
             <div style="width:20px;height:20px;border-radius:50%;background:rgba(47,128,248,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#2F80F8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -813,9 +829,9 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
     <div class="stats-intro" style="margin-bottom:0">
       <div>
         <div class="eyebrow">App Store · 4.8 / 5</div>
-        <h2 class="stats-h2">Das werden <em>Ihre Kunden sagen.</em></h2>
+        <h2 class="stats-h2">Das werden <em>Ihre Kund:innen sagen.</em></h2>
       </div>
-      <p style="font-size:16.5px;color:var(--muted);max-width:520px">Echte Bewertungen aus dem App Store. Was passiert, wenn Ihre Kunden beatvest entdecken: aus Angst vor Finanzen wird echte Freude am Investieren.</p>
+      <p style="font-size:16.5px;color:var(--muted);max-width:520px">Echte Bewertungen aus dem App Store. Was passiert, wenn Ihre Kund:innen beatvest entdecken: aus Unsicherheit bei Finanzthemen wird echte Motivation zum Handeln.</p>
     </div>
     <div class="reviews-grid">
       <div class="review-card">
@@ -840,7 +856,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
           <svg class="review-star" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.5l-3.71 1.95.71-4.13L2 5.5l4.15-.75z"/></svg>
           <svg class="review-star" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.5l-3.71 1.95.71-4.13L2 5.5l4.15-.75z"/></svg>
         </div>
-        <p class="review-body">Beatvest hat für mich Suchtpotenzial. Tolle Idee, brilliant umgesetzt.</p>
+        <p class="review-body">beatvest hat für mich Suchtpotenzial. Tolle Idee, brillant umgesetzt.</p>
         <div class="review-meta">
           <span class="review-name">Lukas</span>
           <span class="review-source">App Store</span>
@@ -854,7 +870,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
           <svg class="review-star" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.5l-3.71 1.95.71-4.13L2 5.5l4.15-.75z"/></svg>
           <svg class="review-star" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.5l-3.71 1.95.71-4.13L2 5.5l4.15-.75z"/></svg>
         </div>
-        <p class="review-body">Mit Beatvest habe ich das notwendige Know-How (und die Motivation) erhalten, das Investieren zu beginnen!</p>
+        <p class="review-body">Mit beatvest habe ich das notwendige Wissen (und die Motivation) erhalten, mit dem Investieren zu beginnen!</p>
         <div class="review-meta">
           <span class="review-name">Gabriel</span>
           <span class="review-source">App Store · Mai 2022</span>
@@ -884,32 +900,15 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
     <div class="stats-intro">
       <div>
         <div class="eyebrow">Die Zahlen</div>
-        <h2 class="stats-h2">Engagement &amp; Abschlussraten, die die <em>Kategorie schlagen.</em></h2>
+        <h2 class="stats-h2">Weltklasse Engagement-Metriken. Wir übertreffen die KPIs der <em>besten Lernplattformen weltweit.</em></h2>
       </div>
-      <p style="font-size:16.5px;color:var(--muted);max-width:520px">Nutzer bleiben langfristig dabei und schließen ab, was sie beginnen. Die Grundlage für mehr Aktivierung, Cross Sell und Retention in Ihrem Portfolio.</p>
+      <p style="font-size:16.5px;color:var(--muted);max-width:520px">Nutzer:innen bleiben langfristig dabei und schließen ab, was sie beginnen. Eine messbare Grundlage für mehr Aktivierung, Cross-Sell und Retention in Ihrem Portfolio.</p>
     </div>
     <div class="stats-grid">
       <div class="stat-cell"><div class="stat-num">46</div><div class="stat-label">Tage Ø Streak</div><div class="stat-sub">durchschnittliche Nutzungsdauer</div></div>
       <div class="stat-cell"><div class="stat-num">339</div><div class="stat-label">Tage längster Streak</div><div class="stat-sub">kontinuierlicher Rekord</div></div>
       <div class="stat-cell"><div class="stat-num">98%</div><div class="stat-label">Lernabschlussrate</div><div class="stat-sub">bei gestarteten Lektionen</div></div>
       <div class="stat-cell"><div class="stat-num">40%</div><div class="stat-label">Kursabschlussrate</div><div class="stat-sub">aller eingeschriebenen Lernenden</div></div>
-    </div>
-    <div class="logos-row">
-      <div class="eyebrow">Partner &amp; Kunden</div>
-      <div class="logo-cards">
-        <div class="logo-card">
-          <img src="logos/bevestor.svg" alt="bevestor">
-        </div>
-        <div class="logo-card">
-          <img src="logos/unicredit.png" alt="UniCredit">
-        </div>
-        <div class="logo-card" style="padding:0 24px">
-          <img src="logos/berliner-volksbank.png" alt="Berliner Volksbank" style="height:34px">
-        </div>
-        <div class="logo-card logo-card-dark">
-          <img src="logos/xtrackers.svg" alt="Xtrackers by DWS">
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -919,26 +918,18 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
   <div class="wrap section-pad">
     <div class="stats-intro" style="margin-bottom:48px">
       <div>
-        <div class="eyebrow">Das Team</div>
-        <h2 class="stats-h2">Gegründet von <em>Regulierungsexperten.</em></h2>
+        <div class="eyebrow">Built by Former Regulators</div>
+        <h2 class="stats-h2">Regulatorisches Know-how, das jedes <em>Compliance-Team überzeugt.</em></h2>
       </div>
-      <p style="font-size:16.5px;color:var(--muted);max-width:520px">Sophie und Julia bringen, was kein Wettbewerber kopieren kann: regulatorische Kompetenz auf Institutsniveau, gepaart mit tiefem Verständnis für Endkundenverhalten.</p>
+      <p style="font-size:16.5px;color:var(--muted);max-width:520px">Die MiFID II-Konformität von beatvest ist kein Beiwerk. Sie ist Teil des Produktdesigns, entwickelt von jemandem, der die regulatorischen Rahmenbedingungen auf höchster institutioneller Ebene mitgestaltet hat.</p>
     </div>
-    <div class="founders-grid">
-      <div class="founder-card">
-        <img class="founder-photo" src="photos/julia.jpg" alt="Julia Kruslin">
-        <div>
-          <div class="founder-name">Julia Kruslin</div>
-          <div class="founder-title">Co-CEO · Vertrieb &amp; Strategie</div>
-          <p class="founder-bio">Strategy&amp; (PwC) Hintergrund. Zuständig für Partnerschaften und Go-to-Market in der DACH-Region. Treibt das Netzwerk von Banken, Brokern und Versicherungen.</p>
-        </div>
-      </div>
+    <div style="max-width:640px">
       <div class="founder-card">
         <img class="founder-photo" src="photos/sophie.jpg" alt="Sophie Thurner">
         <div>
           <div class="founder-name">Sophie Thurner</div>
           <div class="founder-title">Co-CEO · Regulierung &amp; Produkt</div>
-          <p class="founder-bio">Senior Associate bei der FCA, SEC-Abordnung. Autorin von Regulierungsrahmen für FSB, IOSCO und die EU-Kommission. Regulatorische Exzellenz ist Teil des Produkts, nicht nachträglich hinzugefügt.</p>
+          <p class="founder-bio">Senior Associate bei der FCA London, SEC-Abordnung. Autorin von Regulierungsrahmen für FSB, IOSCO und die EU-Kommission. beatvest ist das einzige DEFINO-zertifizierte digitale Finanzbildungsprodukt in Deutschland. Das ist kein Zufall.</p>
         </div>
       </div>
     </div>
@@ -1009,7 +1000,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
     <div class="stats-intro" style="margin-bottom:48px">
       <div>
         <div class="eyebrow">Wie Sie starten</div>
-        <h2 class="stats-h2">In zwei Wochen live. Oder acht Wochen <em>vollständig integriert.</em></h2>
+        <h2 class="stats-h2">Einsatzbereit in zwei Wochen. Vollständig integriert <em>in acht.</em></h2>
       </div>
       <p style="font-size:16.5px;color:var(--muted);max-width:520px">Wählen Sie den Weg, der zu Ihrem Zeitplan passt. Beide Optionen sind vollständig DSGVO-, WpHG- und MiFID II-konform. Wenn sich die Regulierung ändert, aktualisieren wir automatisch.</p>
     </div>
@@ -1099,8 +1090,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <div class="footer-mark">b</div>
-          <span class="footer-wordmark">beatvest</span>
+          <img class="footer-logo-img" src="beatvest-logo.png" alt="beatvest">
         </div>
         <p class="footer-desc">Die zertifizierte Finanzbildungslösung für Umsatzwachstum. Entwickelt für Banken, Versicherungen und Vermögensplattformen in Europa.</p>
         <div class="footer-cities">München</div>
