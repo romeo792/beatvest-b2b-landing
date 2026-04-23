@@ -100,7 +100,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.88);backdrop-f
 .bullet-row{display:flex;gap:16px;padding:18px 0;align-items:flex-start}
 .bullet-row+.bullet-row{border-top:1px solid var(--line)}
 .bullet-num{font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;color:var(--muted2);width:28px;flex-shrink:0;margin-top:2px}
-.bullet-text{font-size:17px;line-height:1.45;font-weight:500}
+.bullet-text{font-size:17px;line-height:1.45;font-weight:500;min-width:0}
 @media(max-width:900px){.problem-grid{grid-template-columns:1fr;gap:40px}}
 
 /* FEATURES */
@@ -310,6 +310,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
 
   /* Typography scale-down */
   .stats-h2{font-size:clamp(22px,6.5vw,34px)}
+  .bullet-text{font-size:15px}
   .problem-h2{font-size:clamp(26px,7.5vw,42px)}
   .feat-h3{font-size:clamp(24px,7vw,36px)}
   .why-h2{font-size:clamp(28px,8vw,48px)}
@@ -318,9 +319,9 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
   /* Features: tighten */
   .feat-copy{padding:28px 0!important}
   .feat-visual{padding:20px 0!important;min-height:0!important}
-  /* Hide floating scene cards — they overflow on narrow screens */
-  .fc{display:none}
-  .scene{min-height:200px;padding:16px 12px}
+  /* Hide floating scene cards — inline style has display:flex so need !important */
+  .fc{display:none!important}
+  .scene{min-height:200px;padding:16px 12px;overflow:hidden}
   .scene-glow{width:200px;height:200px}
 
   /* CTA */
