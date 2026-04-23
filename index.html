@@ -37,7 +37,7 @@ p{line-height:1.55}
 nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.88);backdrop-filter:saturate(1.2)blur(10px);border-bottom:1px solid var(--line2)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
 .nav-logo{display:flex;align-items:center;gap:10px}
-.nav-logo-img{height:30px;width:auto;display:block}
+.nav-logo-img{height:30px;width:auto;display:block;filter:brightness(0)}
 .nav-links{display:flex;gap:32px;font-size:14px;color:var(--muted);font-weight:500}
 .nav-links a:hover{color:var(--ink)}
 
@@ -160,7 +160,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.88);backdrop-f
 footer{background:var(--bg2);border-top:1px solid var(--line)}
 .footer-grid{display:grid;grid-template-columns:1fr auto;gap:80px;padding:72px 0 0;align-items:start}
 .footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.footer-logo-img{height:28px;width:auto;display:block}
+.footer-logo-img{height:28px;width:auto;display:block;filter:brightness(0)}
 .footer-desc{font-size:14px;line-height:1.55;color:var(--muted);max-width:340px}
 .footer-cities{margin-top:20px;font-size:12px;color:var(--muted2);letter-spacing:.06em}
 .footer-col-title{margin-bottom:14px}
@@ -345,21 +345,13 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
         <div class="pill"><span class="pill-dot"></span> Für Banken, Versicherungen &amp; Vermögensplattformen</div>
       </div>
       <h1>Die zertifizierte Finanzbildungslösung <em>für Umsatzwachstum.</em></h1>
-      <p>beatvests Education Suite steigert Engagement, Aufklärung und Conversion über Ihr gesamtes Produktportfolio. White Label. In acht Wochen.</p>
+      <p>Die beatvest Education Suite steigert Engagement, Wissensaufbau und Conversion über Ihr gesamtes Produktportfolio hinweg. Als vollständige White-Label-Lösung. Go-live in acht Wochen.</p>
       <div class="hero-btns">
         <button class="btn-primary" onclick="openModal()">
           Demo buchen
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <button class="btn-secondary" onclick="document.getElementById('produkt').scrollIntoView({behavior:'smooth'})">Das Produkt ansehen</button>
-      </div>
-      <div class="hero-trust">
-        <div class="hero-avatars">
-          <div class="hero-avatar" style="background:#C77E42"></div>
-          <div class="hero-avatar" style="background:#2F80F8;margin-left:-8px"></div>
-          <div class="hero-avatar" style="background:#8B9F71;margin-left:-8px"></div>
-        </div>
-        Vertraut von Finanzteams in der DACH Region
       </div>
     </div>
     <div class="hero-phone-wrap">
@@ -678,7 +670,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
         </div>
         <div class="feat-copy" style="order:2">
           <div class="feat-divider"><span class="feat-num">04 · Aktivierung</span><span class="feat-line"></span></div>
-          <h3 class="feat-h3">Automatisieren Sie Aktivierung mit <em>intelligenten</em> CRM Journeys.</h3>
+          <h3 class="feat-h3">Automatisieren Sie Aktivierung mit <em>intelligenten</em> CRM-Journeys.</h3>
           <p class="feat-body">Transformieren Sie Ihr CRM mit Content-Led Activation. Lösen Sie gezielte Produkt-Impulse, Lernmodule und Re-Engagement-Flows per E-Mail, Push-Benachrichtigung und In-App-Messaging aus. Gehen Sie über reine Kaufnachrichten hinaus und setzen Sie auf eine Content-First-Strategie, die aufklärt, aktiviert und konvertiert.</p>
         </div>
       </div>
@@ -944,7 +936,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
         <div class="eyebrow" style="color:rgba(255,255,255,.55)">Warum beatvest</div>
         <h2 class="why-h2">Die einzige Education-Suite, die für <em>Conversion</em> entwickelt wurde. Nicht für Abschlüsse.</h2>
       </div>
-      <p class="why-body">Wir verkaufen keine Kurse. Wir verkaufen Umsatzwachstum. Jedes Modul ist von Ihren Produkt-KPIs ausgehend entwickelt, damit Lernen zum schnellsten Weg zum Kauf wird.</p>
+      <p class="why-body">beatvest ist keine Lernplattform. beatvest ist ein Instrument für messbare Umsatzergebnisse. Jedes Modul ist von Ihren Produkt-KPIs ausgehend konzipiert, damit Finanzbildung zur stärksten Aktivierungsmaßnahme in Ihrem Portfolio wird.</p>
     </div>
     <div class="awards-bar">
       <div class="award-chip">
@@ -988,8 +980,8 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
       <div class="why-cell"><div class="why-kicker">Go Live in acht Wochen</div><h3>Passt in Ihren Tech Stack</h3><p>Web App, SDK, eingebettete Widgets. Keine Änderungen am Core Banking.</p></div>
       <div class="why-cell"><div class="why-kicker">Ihre Marke, Ihre Stimme</div><h3>White Label von A bis Z</h3><p>Vollständiges Theming, Ihre Produkte. beatvest bleibt unsichtbar.</p></div>
       <div class="why-cell"><div class="why-kicker">Immer aktueller Content</div><h3>300+ Module, wöchentlich neu</h3><p>Neue verhaltensbasierte Videos, Texte und Quizze jede Woche.</p></div>
-      <div class="why-cell"><div class="why-kicker">Live Analytics</div><h3>Gemessen in €, nicht in Klicks</h3><p>Modulabschlüsse verknüpft mit Conversion, AUM und Retention.</p></div>
-      <div class="why-cell"><div class="why-kicker">Dedizierter Partner</div><h3>Erfolg, den Sie anrufen können</h3><p>Vierteljährliche Strategiegespräche, monatliche Content Syncs.</p></div>
+      <div class="why-cell"><div class="why-kicker">Live Analytics</div><h3>Messbar in Umsatz, AUM und Retention</h3><p>Modulabschlüsse direkt verknüpft mit Conversion-KPIs, AUM-Wachstum und Retention-Raten.</p></div>
+      <div class="why-cell"><div class="why-kicker">Dedizierter Partner</div><h3>Persönlicher Ansprechpartner</h3><p>Vierteljährliche Strategiegespräche, monatliche Review-Calls und dediziertes Account-Management.</p></div>
     </div>
   </div>
 </section>
@@ -1067,7 +1059,7 @@ dialog.modal::backdrop{background:rgba(17,17,19,.55);backdrop-filter:blur(6px)}
           2027 steht das Altersvorsorgedepot vor der Tür. Millionen Erstanleger. Die Integration dauert Monate.
         </div>
         <h2 class="cta-h2">Machen Sie Bildung zu Ihrem <em>schnellsten</em> Wachstumskanal.</h2>
-        <p class="cta-sub">15 Minuten. Ihr Produktkatalog. Wir zeigen Ihnen, wo Bildung den größten Umsatz in Ihrem Portfolio freischaltet. Keine Folien, kein Blabla.</p>
+        <p class="cta-sub">In einem strukturierten Gespräch analysieren wir gemeinsam, wo Finanzbildung den größten Hebel in Ihrem Produktportfolio bietet. Konkret, vorbereitet, ohne Standardpräsentation.</p>
         <div class="cta-btns">
           <button class="btn-primary" onclick="openModal()" style="height:52px;padding:0 26px;font-size:15px">
             Demo buchen
